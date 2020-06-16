@@ -1,8 +1,10 @@
-![logo](_media/羊.svg)
 # Pugge的文档网站
-## 个人文档网站
-> 一个神奇的文档网站生成巩固
 
+![logo](_media/羊.svg)
+
+## 个人文档网站
+
+> 一个神奇的文档网站生成巩固
 
 [GitHub](https://github.com/suzy56)
 [hexo](https://suzy56.github.io/)
