@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+ 
+[-HKEY_CLASSES_ROOT\Directory\shell\runas]
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Open cmd here as &Admin"
+"HasLUAShield"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\runas]
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas]
+@="Open cmd here as &Admin"
+"HasLUAShield"=""
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+[-HKEY_CLASSES_ROOT\Drive\shell\runas]
+[HKEY_CLASSES_ROOT\Drive\shell\runas]
+@="Open cmd here as &Admin"
+"HasLUAShield"=""
+[HKEY_CLASSES_ROOT\Drive\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+
+; 3.shift+右键：Powershell(管理员)
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellAdmin]
+[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellAdmin]
+@="Powershell (admin)"
+"Extended"=""
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellAdmin]
+[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellAdmin\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -windowstyle hidden -Command $stpath = pwd; Start-Process PowerShell -ArgumentList \\\"-NoExit\\\", \\\"-Command Set-Location -literalPath '%V'\\\" -verb RunAs"
