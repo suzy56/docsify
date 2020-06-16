@@ -15,6 +15,8 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
+      basePath: "https://suzy56.github.io/docsify/",
+      auto2top: true,
       //封面
       coverpage: true,
       onlyCover: true,
@@ -22,24 +24,31 @@
       loadSidebar: true,
       //加载导航栏
       loadNavbar: true,
+      maxLevel: 4,
       subMaxLevel: 3,
       name: '',
       repo: '',
       // 完整配置参数
+      search: 'auto', // default
+
+      search: [
+        '/',            // => /README.md
+        '/guide',       // => /guide.md
+        '/get-started', // => /get-started.md
+        '/zh-cn/',      // => /zh-cn/README.md
+      ],
       search: {
-        maxAge: 86400000,               // 过期时间，单位毫秒，默认一天
-        paths: [],                      // or 'auto'，匹配文件路径
-        placeholder: 'Type to search',  // 搜索提示框文字， 支持本地化，例子在下面
-        // placeholder: {
-        //   '/zh-cn/': '搜索',
-        //   '/': 'Type to search'
-        // },
-        noData: 'No Results!',          // 找不到结果文字提示，支持本地化，例子在下面
-        // noData: {
-        //   '/zh-cn/': '找不到结果',
-        //   '/': 'No Results'
-        // },
-        depth: 2,                       // 搜索标题的最大程级, 1 - 6
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto', // or 'auto'
+        placeholder: 'Type to search',
+        // Localization
+        placeholder: { "/de-de/": "Suche", "/zh-cn/": "搜索", "/": "Search" },
+        // Localization
+        noData: { "/de-de/": "Keine Ergebnisse!", "/zh-cn/": "没有结果!", "/": "No results!" },
+        // Headline depth, 1 - 6
+        depth: 3,
+        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+        routerMode: "history" 
       }
     }
   </script>
