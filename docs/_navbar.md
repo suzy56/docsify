@@ -1,4 +1,4 @@
-# 配置导航头
+# Pugge's Blog
 
 * web前端
 
