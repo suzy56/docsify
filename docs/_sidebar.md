@@ -1,4 +1,4 @@
-# 配置导航头
+# Pugge's Blog
 
 * [WEB前端环境搭建配置](web_front/环境配置)
   
