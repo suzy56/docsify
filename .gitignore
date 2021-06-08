@@ -1,3 +1,4 @@
 .vscode/settings.json
 .idea
-docs/.vscode/launch.json
+docs/.vscode/*
+docs/.vscode/settings.json
