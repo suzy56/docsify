@@ -56,6 +56,65 @@ class Solution {
 
 
 
+**2.两数相加**
+
+>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+>
+>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+>
+>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+>
+>来源：力扣（LeetCode）
+>链接：https://leetcode-cn.com/problems/add-two-numbers
+>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+>
+>**示例：**
+>
+>```
+>输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+>输出：7 -> 0 -> 8
+>原因：342 + 465 = 807
+>```
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function(l1, l2) {
+    let sum = new ListNode("0")
+    let head = sum
+    let addOne = 0
+    while(addOne || l1 || l2) {
+       let val1 = l1 !== null ? l1.val : 0
+       let val2 = l2 !== null ? l2.val : 0
+       let r = val1 + val2 + addOne
+       addOne = r < 10 ? 0 : 1
+       sum.next = new ListNode(r % 10)
+       sum = sum.next
+       if(l1) l1 = l1.next
+       if(l2) l2 = l2.next
+    }
+    return head.next
+};
+```
+
+
+
+
+
+
+
+
+
 **15.三数相加**
 
 > 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
